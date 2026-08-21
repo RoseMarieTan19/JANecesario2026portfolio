@@ -15,221 +15,1448 @@
 
 <link rel="stylesheet" href="style.css">
 
+<style>
+
+/* =========================================
+   ABOUT ME SECTION
+========================================= */
+
+.about-section{
+    width:100%;
+    min-height:700px;
+
+    background:var(--white);
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:80px 6%;
+}
+
+
+/* Main container */
+
+.about-container{
+    max-width:1350px;
+
+    margin:0 auto;
+
+    min-height:560px;
+
+    display:grid;
+
+    grid-template-columns:48% 52%;
+
+    align-items:center;
+
+    position:relative;
+}
+
+
+/* =========================================
+   PHOTO AREA
+========================================= */
+
+.about-photo-area{
+
+    position:relative;
+
+    height:620px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    z-index:3;
+}
+
+
+/* Gold decorative circle */
+
+.about-photo-area::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    border-radius:50%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold-light)
+        );
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    opacity:.12;
+
+    z-index:0;
+}
+
+
+/* Decorative gold ring */
+
+.about-photo-area::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:400px;
+    height:500px;
+
+    border:2px solid var(--gold);
+
+    border-radius:50%;
+
+    left:50%;
+    top:48%;
+
+    transform:translate(-50%,-50%)
+               rotate(-8deg);
+
+    opacity:.45;
+
+    z-index:0;
+}
+
+
+/* =========================================
+   PORTRAIT
+========================================= */
+
+.about-photo{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:contain;
+
+    object-position:center bottom;
+
+    filter:drop-shadow(
+        0 25px 25px rgba(15,17,21,.18)
+    );
+
+    transform:scale(1.08);
+
+    transition:
+        transform .5s ease;
+}
+
+
+/* Slight hover effect */
+
+.about-photo-area:hover .about-photo{
+
+    transform:
+        scale(1.1)
+        translateY(-5px);
+}
+
+
+/* =========================================
+   ABOUT CONTENT
+========================================= */
+
+.about-content{
+
+    position:relative;
+
+    z-index:5;
+
+    padding:40px 20px 40px 20px;
+
+    max-width:700px;
+}
+
+
+/* Small heading */
+
+.about-label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:var(--gold);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+}
+
+
+.about-label::before{
+
+    content:"";
+
+    width:45px;
+
+    height:2px;
+
+    background:var(--gold);
+}
+
+
+/* Main heading */
+
+.about-content h2{
+
+    margin:0 0 25px;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:clamp(
+        38px,
+        4.5vw,
+        62px
+    );
+
+    line-height:1.08;
+
+    font-weight:800;
+
+    color:var(--black);
+}
+
+
+/* Gold emphasis */
+
+.about-content h2 span{
+
+    display:block;
+
+    color:var(--gold);
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:1.25em;
+
+    font-weight:400;
+
+    line-height:.95;
+
+    margin-top:5px;
+}
+
+
+/* Intro paragraph */
+
+.about-intro{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:var(--black);
+
+    margin-bottom:20px;
+}
+
+
+.about-intro strong{
+
+    color:var(--gold);
+
+    font-weight:800;
+}
+
+
+/* Description */
+
+.about-description{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:#666;
+
+    max-width:650px;
+
+    margin-bottom:32px;
+}
+
+
+/* =========================================
+   SKILLS
+========================================= */
+
+.about-skills{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:14px;
+
+    margin-top:25px;
+}
+
+
+.about-skill{
+
+    background:var(--cream);
+
+    border:
+
+        1px solid
+        rgba(192,138,42,.18);
+
+    border-radius:12px;
+
+    padding:20px 16px;
+
+    transition:
+        all .3s ease;
+}
+
+
+.about-skill:hover{
+
+    transform:translateY(-6px);
+
+    border-color:var(--gold);
+
+    box-shadow:
+
+        0 15px 35px
+        rgba(15,17,21,.08);
+}
+
+
+/* Skill icon */
+
+.skill-icon{
+
+    width:44px;
+
+    height:44px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:var(--black);
+
+    color:var(--gold-light);
+
+    font-size:16px;
+
+    margin-bottom:13px;
+}
+
+
+.about-skill h3{
+
+    font-size:14px;
+
+    font-weight:800;
+
+    color:var(--black);
+
+    margin-bottom:6px;
+}
+
+
+.about-skill p{
+
+    font-size:12px;
+
+    line-height:1.55;
+
+    color:#666;
+
+    text-align:left;
+
+    margin:0;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.about-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:30px;
+
+    padding:15px 25px;
+
+    background:var(--black);
+
+    color:var(--white);
+
+    text-decoration:none;
+
+    border-radius:5px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    transition:
+        all .3s ease;
+}
+
+
+.about-button:hover{
+
+    background:var(--gold);
+
+    color:var(--black);
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+        0 10px 25px
+        rgba(192,138,42,.25);
+}
+
+
+.about-button i{
+
+    transition:
+        transform .3s ease;
+}
+
+
+.about-button:hover i{
+
+    transform:
+        translateX(5px);
+}
+
+
+/* =========================================
+   DECORATIVE GOLD LINE
+========================================= */
+
+.about-decoration{
+
+    position:absolute;
+
+    right:-100px;
+
+    top:70px;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    border:
+
+        1px solid
+        rgba(192,138,42,.2);
+
+    z-index:0;
+}
+
+
+.about-decoration::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    border:
+
+        1px solid
+        rgba(192,138,42,.2);
+
+    top:55px;
+
+    left:55px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:1050px){
+
+    .about-section{
+
+        padding:
+            70px 5%;
+    }
+
+    .about-container{
+
+        grid-template-columns:
+            45% 55%;
+
+        gap:20px;
+    }
+
+    .about-photo-area{
+
+        height:560px;
+    }
+
+    .about-photo{
+
+        transform:
+            scale(1.02);
+    }
+
+    .about-content{
+
+        padding:
+            30px 10px;
+    }
+
+    .about-content h2{
+
+        font-size:42px;
+    }
+
+    .about-skills{
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .about-skill{
+
+        display:grid;
+
+        grid-template-columns:
+            44px 1fr;
+
+        column-gap:12px;
+    }
+
+    .skill-icon{
+
+        grid-row:
+            span 2;
+
+        margin:0;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+    .about-section{
+
+        padding:
+            70px 20px 80px;
+    }
+
+    .about-container{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:30px;
+
+        min-height:auto;
+    }
+
+
+    /* Photo */
+
+    .about-photo-area{
+
+        width:100%;
+
+        height:450px;
+
+        order:1;
+    }
+
+    .about-photo{
+
+        width:100%;
+
+        height:470px;
+
+        transform:
+            scale(1.03);
+
+        object-position:
+            center bottom;
+    }
+
+
+    .about-photo-area::before{
+
+        width:320px;
+
+        height:320px;
+    }
+
+    .about-photo-area::after{
+
+        width:290px;
+
+        height:380px;
+    }
+
+
+    /* Content */
+
+    .about-content{
+
+        width:100%;
+
+        max-width:650px;
+
+        padding:10px 0 0;
+
+        text-align:center;
+
+        order:2;
+    }
+
+
+    .about-label{
+
+        justify-content:center;
+    }
+
+
+    .about-content h2{
+
+        font-size:36px;
+    }
+
+
+    .about-content h2 span{
+
+        font-size:1.2em;
+    }
+
+
+    .about-intro{
+
+        font-size:16px;
+
+        line-height:1.75;
+    }
+
+
+    .about-description{
+
+        font-size:14px;
+
+        line-height:1.75;
+    }
+
+
+    /* Skills */
+
+    .about-skills{
+
+        grid-template-columns:
+            1fr;
+
+        text-align:left;
+    }
+
+
+    .about-skill{
+
+        display:grid;
+
+        grid-template-columns:
+            44px 1fr;
+
+        column-gap:14px;
+
+        text-align:left;
+    }
+
+
+    .skill-icon{
+
+        grid-row:
+            span 2;
+
+        margin:0;
+    }
+
+
+    .about-button{
+
+        margin-top:25px;
+    }
+
+
+    .about-decoration{
+
+        display:none;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:480px){
+
+    .about-section{
+
+        padding:
+            55px 18px 65px;
+    }
+
+
+    .about-photo-area{
+
+        height:370px;
+    }
+
+
+    .about-photo{
+
+        height:390px;
+
+        transform:
+            scale(1.02);
+    }
+
+
+    .about-photo-area::before{
+
+        width:270px;
+
+        height:270px;
+    }
+
+
+    .about-photo-area::after{
+
+        width:240px;
+
+        height:320px;
+    }
+
+
+    .about-content h2{
+
+        font-size:30px;
+    }
+
+
+    .about-content h2 span{
+
+        font-size:1.15em;
+    }
+
+
+    .about-intro{
+
+        font-size:15px;
+    }
+
+
+    .about-description{
+
+        font-size:13px;
+    }
+
+
+    .about-skill{
+
+        padding:16px;
+    }
+
+
+    .about-button{
+
+        width:100%;
+
+        justify-content:center;
+    }
+
+}
+
+</style>
+
 </head>
+
 <body>
+
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
 
 <header class="navbar">
 
-    <div class="logo">JA Necesario</div>
+    <div class="logo">
+        JA Necesario
+    </div>
 
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#services">
+            Services
+        </a>
+
+        <a href="#portfolio">
+            Portfolio
+        </a>
+
+        <a href="#experience">
+            Experience
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
     </nav>
 
 </header>
 
 
-<!-- HOME -->
+<!-- =========================================
+     HOME
+========================================= -->
 
 <section id="home" class="hero">
 
-    <img src="banner.png" alt="Judy Ann Banner">
+    <img
+        src="banner.png"
+        alt="Judy Ann Banner"
+    >
 
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================================
+     ABOUT ME
+========================================= -->
 
 <section id="about" class="about-section">
 
-    <div class="about-image-wrapper">
+    <div class="about-decoration"></div>
 
-        <img 
-            src="about-me.png" 
-            alt="Judy Ann Necesario - Administrative and Operations Virtual Assistant"
-            class="about-image"
-        >
+    <div class="about-container">
+
+
+        <!-- =================================
+             PORTRAIT
+        ================================== -->
+
+        <div class="about-photo-area">
+
+            <img
+                src="about-me.png"
+                alt="Judy Ann Necesario - Administrative and Operations Virtual Assistant"
+                class="about-photo"
+            >
+
+        </div>
+
+
+        <!-- =================================
+             ABOUT CONTENT
+        ================================== -->
+
+        <div class="about-content">
+
+            <div class="about-label">
+                About Me
+            </div>
+
+
+            <h2>
+
+                Helping Businesses
+
+                <span>
+                    Stay Organized,
+                </span>
+
+                Efficient &amp; Productive.
+
+            </h2>
+
+
+            <p class="about-intro">
+
+                Hi, I'm
+                <strong>Judy Ann Necesario</strong>
+                — an Administrative &amp; Operations Virtual Assistant.
+
+            </p>
+
+
+            <p class="about-description">
+
+                I help entrepreneurs and businesses stay organized
+                through reliable administrative and operational support.
+                From managing daily tasks to coordinating projects,
+                I take care of the details behind the scenes so you
+                can focus on what matters most — growing your business.
+
+            </p>
+
+
+            <!-- =================================
+                 SKILLS
+            ================================== -->
+
+            <div class="about-skills">
+
+
+                <!-- Detail Oriented -->
+
+                <div class="about-skill">
+
+                    <div class="skill-icon">
+
+                        <i class="fas fa-clipboard-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Detail-Oriented
+                        </h3>
+
+                        <p>
+                            Organized systems, accurate documentation,
+                            and attention to important details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Reliable -->
+
+                <div class="about-skill">
+
+                    <div class="skill-icon">
+
+                        <i class="fas fa-handshake"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Reliable
+                        </h3>
+
+                        <p>
+                            Consistent support, clear communication,
+                            and timely follow-through.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Efficient -->
+
+                <div class="about-skill">
+
+                    <div class="skill-icon">
+
+                        <i class="fas fa-bolt"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Efficient
+                        </h3>
+
+                        <p>
+                            Practical workflows that improve
+                            productivity and keep operations moving.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- CTA -->
+
+            <a
+                href="#contact"
+                class="about-button"
+            >
+
+                Let's Work Together
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+
+        </div>
 
     </div>
 
 </section>
 
 
-<!-- SERVICES -->
+<!-- =========================================
+     SERVICES
+========================================= -->
 
 <section id="services" class="section dark">
 
-    <h2>Virtual Assistant Services</h2>
+    <h2>
+        Virtual Assistant Services
+    </h2>
+
 
     <div class="grid">
 
-        <div class="service">
-            <h3>Administrative Support</h3>
-            <p>Email, calendar, reports, and file management.</p>
-        </div>
 
         <div class="service">
-            <h3>Project Coordination</h3>
-            <p>Task tracking and workflow optimization.</p>
+
+            <h3>
+                Administrative Support
+            </h3>
+
+            <p>
+                Email, calendar, reports, and file management.
+            </p>
+
         </div>
 
-        <div class="service">
-            <h3>Social Media Support</h3>
-            <p>Content scheduling, Canva graphics, and content management.</p>
-        </div>
 
         <div class="service">
-            <h3>Website Management</h3>
-            <p>Kajabi updates, page maintenance, and content management.</p>
+
+            <h3>
+                Project Coordination
+            </h3>
+
+            <p>
+                Task tracking and workflow optimization.
+            </p>
+
         </div>
 
-        <div class="service">
-            <h3>Client Support</h3>
-            <p>Professional communication and client care.</p>
-        </div>
 
         <div class="service">
-            <h3>Documentation</h3>
-            <p>Reports, file organization, and business records.</p>
+
+            <h3>
+                Social Media Support
+            </h3>
+
+            <p>
+                Content scheduling, Canva graphics,
+                and content management.
+            </p>
+
         </div>
+
+
+        <div class="service">
+
+            <h3>
+                Website Management
+            </h3>
+
+            <p>
+                Kajabi updates, page maintenance,
+                and content management.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <h3>
+                Client Support
+            </h3>
+
+            <p>
+                Professional communication and client care.
+            </p>
+
+        </div>
+
+
+        <div class="service">
+
+            <h3>
+                Documentation
+            </h3>
+
+            <p>
+                Reports, file organization,
+                and business records.
+            </p>
+
+        </div>
+
 
     </div>
 
 </section>
 
-<!-- PORTFOLIO -->
+
+<!-- =========================================
+     PORTFOLIO
+========================================= -->
 
 <section id="portfolio" class="section">
 
-    <h2>Portfolio</h2>
+    <h2>
+        Portfolio
+    </h2>
+
 
     <div class="portfolio-grid">
 
-        <div class="portfolio-card">
-            <div class="placeholder">Client Status Report</div>
-            <h3>Client Status Report</h3>
-        </div>
 
         <div class="portfolio-card">
-            <div class="placeholder">Content Calendar</div>
-            <h3>Content Calendar</h3>
+
+            <div class="placeholder">
+                Client Status Report
+            </div>
+
+            <h3>
+                Client Status Report
+            </h3>
+
         </div>
 
-        <div class="portfolio-card">
-            <div class="placeholder">Canva Promotional Graphic</div>
-            <h3>Canva Promotional Graphic</h3>
-        </div>
 
         <div class="portfolio-card">
-            <div class="placeholder">Kajabi Landing Page Mockup</div>
-            <h3>Kajabi Landing Page Mockup</h3>
+
+            <div class="placeholder">
+                Content Calendar
+            </div>
+
+            <h3>
+                Content Calendar
+            </h3>
+
         </div>
 
-        <div class="portfolio-card">
-            <div class="placeholder">Calendar Management</div>
-            <h3>Calendar Management Example</h3>
-        </div>
 
         <div class="portfolio-card">
-            <div class="placeholder">Project Tracker</div>
-            <h3>Project Tracker</h3>
+
+            <div class="placeholder">
+                Canva Promotional Graphic
+            </div>
+
+            <h3>
+                Canva Promotional Graphic
+            </h3>
+
         </div>
+
+
+        <div class="portfolio-card">
+
+            <div class="placeholder">
+                Kajabi Landing Page Mockup
+            </div>
+
+            <h3>
+                Kajabi Landing Page Mockup
+            </h3>
+
+        </div>
+
+
+        <div class="portfolio-card">
+
+            <div class="placeholder">
+                Calendar Management
+            </div>
+
+            <h3>
+                Calendar Management Example
+            </h3>
+
+        </div>
+
+
+        <div class="portfolio-card">
+
+            <div class="placeholder">
+                Project Tracker
+            </div>
+
+            <h3>
+                Project Tracker
+            </h3>
+
+        </div>
+
 
     </div>
 
 </section>
 
 
-<!-- EXPERIENCE -->
+<!-- =========================================
+     EXPERIENCE
+========================================= -->
 
 <section id="experience" class="section dark">
 
-    <h2>Experience Timeline</h2>
+    <h2>
+        Experience Timeline
+    </h2>
+
 
     <div class="timeline">
 
-        <div class="item">
-            <span>2026</span>
-            <div>
-                <h3>Virtual Assistant Portfolio</h3>
-                <p>Building a professional online presence and showcasing projects.</p>
-            </div>
-        </div>
 
         <div class="item">
-            <span>Administrative</span>
+
+            <span>
+                2026
+            </span>
+
             <div>
-                <h3>Operations Support</h3>
-                <p>Project coordination, documentation, and client communication.</p>
+
+                <h3>
+                    Virtual Assistant Portfolio
+                </h3>
+
+                <p>
+                    Building a professional online presence
+                    and showcasing projects.
+                </p>
+
             </div>
+
         </div>
 
+
         <div class="item">
-            <span>Customer Support</span>
+
+            <span>
+                Administrative
+            </span>
+
             <div>
-                <h3>Business Assistance</h3>
-                <p>Helping businesses stay organized and productive.</p>
+
+                <h3>
+                    Operations Support
+                </h3>
+
+                <p>
+                    Project coordination, documentation,
+                    and client communication.
+                </p>
+
             </div>
+
         </div>
+
+
+        <div class="item">
+
+            <span>
+                Customer Support
+            </span>
+
+            <div>
+
+                <h3>
+                    Business Assistance
+                </h3>
+
+                <p>
+                    Helping businesses stay organized
+                    and productive.
+                </p>
+
+            </div>
+
+        </div>
+
 
     </div>
 
 </section>
 
 
-<!-- CONTACT -->
+<!-- =========================================
+     CONTACT
+========================================= -->
 
 <section id="contact" class="section">
 
-    <h2>Let's Build Something Great Together</h2>
+    <h2>
+        Let's Build Something Great Together
+    </h2>
+
 
     <p class="contact-text">
-        Let's connect on social media or send me an email.
+
+        Let's connect on social media
+        or send me an email.
+
     </p>
+
 
     <div class="social-icons">
 
-        <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+
+        <a
+            href="https://facebook.com/"
+            target="_blank"
+            aria-label="Facebook"
+        >
+
             <i class="fab fa-facebook-f"></i>
+
         </a>
 
-        <a href="https://www.linkedin.com/in/judy-ann-necesario-virtual-assistant/" target="_blank" aria-label="LinkedIn">
+
+        <a
+            href="https://www.linkedin.com/in/judy-ann-necesario-virtual-assistant/"
+            target="_blank"
+            aria-label="LinkedIn"
+        >
+
             <i class="fab fa-linkedin-in"></i>
+
         </a>
 
-<a href="mailto:necesariojudyann32@gmail.com?subject=Virtual%20Assistant%20Inquiry&body=Hi%20Judy%20Ann%2C%20I'd%20like%20to%20connect%20with%20you." aria-label="Email">
-    <i class="fas fa-envelope"></i>
-</a>
 
-        <a href="https://www.threads.net/" target="_blank" aria-label="Threads">
+        <a
+            href="mailto:necesariojudyann32@gmail.com?subject=Virtual%20Assistant%20Inquiry&body=Hi%20Judy%20Ann%2C%20I'd%20like%20to%20connect%20with%20you."
+            aria-label="Email"
+        >
+
+            <i class="fas fa-envelope"></i>
+
+        </a>
+
+
+        <a
+            href="https://www.threads.net/"
+            target="_blank"
+            aria-label="Threads"
+        >
+
             <i class="fab fa-threads"></i>
+
         </a>
 
-        <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+
+        <a
+            href="https://instagram.com/"
+            target="_blank"
+            aria-label="Instagram"
+        >
+
             <i class="fab fa-instagram"></i>
+
         </a>
 
-        <a href="https://tiktok.com/" target="_blank" aria-label="TikTok">
+
+        <a
+            href="https://tiktok.com/"
+            target="_blank"
+            aria-label="TikTok"
+        >
+
             <i class="fab fa-tiktok"></i>
+
         </a>
+
 
     </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================================
+     FOOTER
+========================================= -->
 
 <footer>
 
-    <p>© 2026 Judy Ann Necesario | Administrative & Operations Virtual Assistant</p>
+    <p>
+        © 2026 Judy Ann Necesario |
+        Administrative &amp; Operations Virtual Assistant
+    </p>
 
 </footer>
+
 
 <script src="script.js"></script>
 
