@@ -12,6 +12,7 @@ body{font-family:Montserrat,sans-serif;background:var(--cream);color:var(--black
 nav a{color:#fff;text-decoration:none;margin-left:1.4rem;font-weight:600}
 nav a:hover{color:var(--gold-light)}
 .hero img{width:100%;display:block}
+.about img{width:50%;display:left}
 .section{padding:70px 8%}
 .section h2{text-align:center;color:var(--gold);font-size:2.2rem;margin-bottom:1rem}
 .dark{background:var(--black);color:#fff}
