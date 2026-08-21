@@ -4,9 +4,13 @@
     --black:#0F1115;
     --cream:#F7F4EF;
     --white:#FFFFFF;
+    --gray:#666666;
+    --light-gray:#EDEAE4;
 }
 
-/* Reset */
+/* =========================================
+   RESET
+========================================= */
 
 *{
     margin:0;
@@ -22,7 +26,10 @@ body{
     line-height:1.6;
 }
 
-/* Navigation */
+
+/* =========================================
+   NAVIGATION
+========================================= */
 
 .navbar{
     position:sticky;
@@ -58,14 +65,20 @@ nav a:hover{
     color:var(--gold-light);
 }
 
-/* Hero */
+
+/* =========================================
+   HERO
+========================================= */
 
 .hero img{
     width:100%;
     display:block;
 }
 
-/* Sections */
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
 
 .section{
     padding:80px 8%;
@@ -89,7 +102,10 @@ nav a:hover{
     color:var(--white);
 }
 
-/* Cards */
+
+/* =========================================
+   CARDS
+========================================= */
 
 .cards,
 .grid,
@@ -141,7 +157,10 @@ nav a:hover{
     margin-bottom:10px;
 }
 
-/* Portfolio */
+
+/* =========================================
+   PORTFOLIO
+========================================= */
 
 .portfolio-card img{
     width:100%;
@@ -159,7 +178,10 @@ nav a:hover{
     font-weight:700;
 }
 
-/* Timeline */
+
+/* =========================================
+   TIMELINE
+========================================= */
 
 .timeline{
     max-width:850px;
@@ -181,7 +203,353 @@ nav a:hover{
     font-weight:700;
 }
 
-/* Contact */
+
+/* =========================================
+   ABOUT ME
+========================================= */
+
+.about-section{
+    width:100%;
+    padding:100px 8%;
+    background:var(--white);
+    position:relative;
+    overflow:hidden;
+}
+
+.about-container{
+    max-width:1180px;
+    margin:0 auto;
+
+    display:grid;
+    grid-template-columns:420px 1fr;
+
+    align-items:center;
+
+    gap:80px;
+}
+
+
+/* =========================================
+   ABOUT PHOTO
+========================================= */
+
+.about-photo{
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:500px;
+}
+
+.photo-frame{
+    width:370px;
+    height:460px;
+
+    position:relative;
+    z-index:2;
+
+    overflow:hidden;
+
+    border-radius:8px;
+
+    background:var(--cream);
+
+    border:8px solid var(--white);
+
+    box-shadow:
+        0 20px 50px rgba(15,17,21,.18);
+}
+
+.photo-frame img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+
+/* Gold frame accent */
+
+.photo-accent{
+    position:absolute;
+
+    width:370px;
+    height:460px;
+
+    border:3px solid var(--gold);
+
+    border-radius:8px;
+
+    left:calc(50% - 165px);
+    top:35px;
+
+    z-index:1;
+}
+
+
+/* Decorative gold circle */
+
+.photo-accent::after{
+    content:"";
+
+    position:absolute;
+
+    width:85px;
+    height:85px;
+
+    background:var(--gold);
+
+    border-radius:50%;
+
+    right:-48px;
+    bottom:-40px;
+
+    z-index:-1;
+}
+
+
+/* Small decorative line */
+
+.about-photo::before{
+    content:"";
+
+    position:absolute;
+
+    width:90px;
+    height:3px;
+
+    background:var(--gold);
+
+    left:5px;
+    bottom:55px;
+
+    z-index:3;
+}
+
+
+/* =========================================
+   ABOUT CONTENT
+========================================= */
+
+.about-content{
+    max-width:650px;
+}
+
+.about-label{
+    display:inline-block;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    color:var(--gold);
+
+    margin-bottom:15px;
+}
+
+.about-content h2{
+    margin:0 0 25px;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:clamp(34px,4vw,52px);
+
+    line-height:1.12;
+
+    font-weight:800;
+
+    color:var(--black);
+}
+
+.about-content h2 span{
+    display:block;
+
+    color:var(--gold);
+}
+
+.about-content p{
+    font-family:'Montserrat',sans-serif;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:var(--gray);
+
+    margin:0 0 18px;
+}
+
+.about-content .about-intro{
+    font-size:18px;
+
+    line-height:1.75;
+
+    color:var(--black);
+}
+
+.about-content strong{
+    color:var(--gold);
+
+    font-weight:800;
+}
+
+
+/* =========================================
+   ABOUT SKILLS
+========================================= */
+
+.about-skills{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:14px;
+
+    margin-top:30px;
+
+    margin-bottom:30px;
+}
+
+.about-skill{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    padding:20px 17px;
+
+    background:var(--cream);
+
+    border:1px solid rgba(192,138,42,.18);
+
+    border-radius:10px;
+
+    transition:all .3s ease;
+}
+
+.about-skill:hover{
+    transform:translateY(-5px);
+
+    border-color:var(--gold);
+
+    box-shadow:
+        0 12px 30px rgba(15,17,21,.08);
+}
+
+
+/* Skill icon */
+
+.skill-icon{
+    width:42px;
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:var(--black);
+
+    color:var(--gold-light);
+
+    border-radius:50%;
+
+    font-size:15px;
+}
+
+.about-skill h3{
+    margin:0 0 4px;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    color:var(--black);
+}
+
+.about-skill p{
+    margin:0;
+
+    font-size:12px;
+
+    line-height:1.55;
+
+    color:var(--gray);
+
+    text-align:left;
+}
+
+
+/* =========================================
+   ABOUT BUTTON
+========================================= */
+
+.about-button{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:15px 25px;
+
+    background:var(--black);
+
+    color:var(--white);
+
+    text-decoration:none;
+
+    border-radius:5px;
+
+    font-family:'Montserrat',sans-serif;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    letter-spacing:.3px;
+
+    transition:all .3s ease;
+}
+
+.about-button:hover{
+    background:var(--gold);
+
+    color:var(--black);
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(192,138,42,.25);
+}
+
+.about-button i{
+    font-size:12px;
+
+    transition:transform .3s ease;
+}
+
+.about-button:hover i{
+    transform:translateX(4px);
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
 
 .contact-text{
     text-align:center;
@@ -200,36 +568,89 @@ nav a:hover{
 .social-icons a{
     width:70px;
     height:70px;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     text-decoration:none;
+
     font-size:30px;
+
     color:var(--gold);
+
     background:var(--black);
+
     border:2px solid var(--gold);
+
     border-radius:50%;
+
     transition:all .35s ease;
+
     box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
 .social-icons a:hover{
     background:var(--gold);
+
     color:var(--black);
+
     transform:translateY(-8px) scale(1.08);
-    box-shadow:0 12px 30px rgba(192,138,42,.35);
+
+    box-shadow:
+        0 12px 30px rgba(192,138,42,.35);
 }
 
-/* Footer */
+
+/* =========================================
+   FOOTER
+========================================= */
 
 footer{
     background:var(--black);
+
     color:#AAA;
+
     text-align:center;
+
     padding:24px;
 }
 
-/* Mobile */
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:1000px){
+
+    .about-container{
+        grid-template-columns:350px 1fr;
+
+        gap:55px;
+    }
+
+    .photo-frame{
+        width:320px;
+        height:410px;
+    }
+
+    .photo-accent{
+        width:320px;
+        height:410px;
+
+        left:calc(50% - 145px);
+    }
+
+    .about-skills{
+        grid-template-columns:1fr;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media(max-width:768px){
 
@@ -240,7 +661,9 @@ footer{
 
     nav{
         flex-wrap:wrap;
+
         justify-content:center;
+
         gap:16px;
     }
 
@@ -252,17 +675,169 @@ footer{
         font-size:1.9rem;
     }
 
+
+    /* ABOUT */
+
+    .about-section{
+        padding:70px 6%;
+    }
+
+    .about-container{
+        grid-template-columns:1fr;
+
+        gap:55px;
+    }
+
+    .about-photo{
+        min-height:430px;
+    }
+
+    .photo-frame{
+        width:300px;
+        height:390px;
+    }
+
+    .photo-accent{
+        width:300px;
+        height:390px;
+
+        left:calc(50% - 130px);
+
+        top:28px;
+    }
+
+    .about-content{
+        max-width:100%;
+
+        text-align:center;
+    }
+
+    .about-content h2{
+        font-size:36px;
+    }
+
+    .about-content h2 span{
+        display:inline;
+    }
+
+    .about-content .about-intro{
+        font-size:16px;
+    }
+
+    .about-content p{
+        font-size:14px;
+    }
+
+    .about-skills{
+        grid-template-columns:1fr;
+
+        text-align:left;
+    }
+
+    .about-skill{
+        flex-direction:row;
+
+        align-items:flex-start;
+
+        text-align:left;
+    }
+
+    .about-skill p{
+        text-align:left;
+    }
+
+    .about-button{
+        margin-top:5px;
+    }
+
+
+    /* TIMELINE */
+
     .item{
         grid-template-columns:1fr;
+
         border-left:none;
+
         border-top:3px solid var(--gold);
+
         padding-left:0;
+
         padding-top:20px;
     }
+
+
+    /* SOCIAL */
 
     .social-icons a{
         width:60px;
         height:60px;
+
         font-size:24px;
     }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:500px){
+
+    .about-section{
+        padding:60px 20px;
+    }
+
+    .about-container{
+        gap:40px;
+    }
+
+    .about-photo{
+        min-height:370px;
+    }
+
+    .photo-frame{
+        width:260px;
+        height:335px;
+    }
+
+    .photo-accent{
+        width:260px;
+        height:335px;
+
+        left:calc(50% - 110px);
+
+        top:22px;
+    }
+
+    .photo-accent::after{
+        width:65px;
+        height:65px;
+
+        right:-32px;
+        bottom:-30px;
+    }
+
+    .about-content h2{
+        font-size:30px;
+    }
+
+    .about-content .about-intro{
+        font-size:15px;
+    }
+
+    .about-content p{
+        font-size:13px;
+    }
+
+    .about-skill{
+        padding:15px;
+    }
+
+    .skill-icon{
+        width:38px;
+        height:38px;
+
+        min-width:38px;
+    }
+
 }
